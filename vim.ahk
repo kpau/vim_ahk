@@ -12,9 +12,15 @@ GroupAdd VimGroup, Write: ;Thuderbird, English
 GroupAdd VimGroup, ahk_exe POWERPNT.exe ; PowerPoint
 GroupAdd VimGroup, ahk_exe WINWORD.exe ; Word
 GroupAdd VimGroup, ahk_exe Evernote.exe ; Evernote
-GroupAdd VimGroup, ahk_exe Code.exe ; Visual Studio Code
 GroupAdd VimGroup, ahk_exe onenote.exe ; OneNote Desktop
 GroupAdd VimGroup, OneNote ; OneNote in Windows 10
+GroupAdd VimGroup, ahk_exe outlook.exe ; Outlook
+GroupAdd VimGroup, ahk_exe viber.exe ; Viber
+GroupAdd VimGroup, ahk_exe skype.exe ; Skype
+GroupAdd VimGroup, ahk_exe Messenger for Desktop.exe ; Facebook messanger
+GroupAdd VimGroup, ahk_exe teams.exe ; MS Teams
+GroupAdd VimGroup, ahk_exe gitkraken.exe ; Git Kraken
+GroupAdd VimGroup, ahk_exe chrome.exe ; Google Chrome
 
 ; Following application select the line break at Shift + End.
 GroupAdd LBSelect, ahk_exe POWERPNT.exe ; PowerPoint
@@ -26,10 +32,10 @@ GroupAdd OneNoteGroup, ahk_exe onenote.exe ; OneNote Desktop
 ;GroupAdd OneNoteGroup, , OneNote ; OneNote in Windows 10
 
 ; Need Home twice
-GroupAdd DoubleHome, ahk_exe Code.exe ; Visual Studio Code
+;GroupAdd DoubleHome, ahk_exe Code.exe ; Visual Studio Code
 
 ; Global settings
-VimVerbose=0 ; Verbose level (0: no pop up, 1: minimum tool tips of status, 2: more info in tool tips, 3: Debug mode with a message box, which doesn't disappear automatically)
+VimVerbose=1 ; Verbose level (0: no pop up, 1: minimum tool tips of status, 2: more info in tool tips, 3: Debug mode with a message box, which doesn't disappear automatically)
 VimRestoreIME=1 ; If IME status is restored or not at entering insert mode. 1 for restoring, 0 for not to restore (always IME off at enterng insert mode).
 
 VimMode=Insert
@@ -131,8 +137,8 @@ VIM_IME_SET(SetSts=0, WinTitle="A")    {
 
 Status(Title){
     WinGetPos,,,W,H,A
-    Tooltip,%Title%,W*3/4,H*3/4
-    SetTimer, RemoveStatus, 1000
+    Tooltip,%Title%,50,7
+    SetTimer, RemoveStatus, 2000
 }
 
 RemoveStatus:
